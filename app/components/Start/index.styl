@@ -36,10 +36,11 @@
 	font-size 13px
 	color #fff
 	text-transform uppercase
+	opacity 0.75
 	transition opacity .1s ease
 
 	&:hover
-		opacity 0.6
+		opacity 0.55
 
 impressumWidth = 230px
 
@@ -71,7 +72,7 @@ impressumWidth = 230px
 #closeImpressum
 	position absolute
 	right 20px
-	bottom 20px
+	top 20px
 	width 30px
 	height 30px
 	cursor pointer
@@ -87,6 +88,7 @@ impressumWidth = 230px
 		height 20px
 		background #999
 		transition background .1s linear
+		border-radius 10px
 
 	&:before
 		transform translate(-50%, -50%) rotate(-45deg)
@@ -94,9 +96,11 @@ impressumWidth = 230px
 	&:after
 		transform translate(-50%, -50%) rotate(45deg)
 
-	&:hover {
+	&:hover
 		transform rotate(-180deg);
-	}
+
+		&:before, &:after
+			background #d30000
 
 #page.isImprintVisible
 
