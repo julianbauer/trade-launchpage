@@ -30,7 +30,6 @@ export default class Start extends React.Component {
 			<div id="page" className={cx}>
 				<section id="start">
 					<div id="logo"></div>
-					<div id="linkToImpressum" onClick={this.handleOpen}>Imprint</div>
 				</section>
 				<section id="impressum">
 					<div id="closeImpressum" onClick={this.handleClose}></div>
@@ -46,6 +45,7 @@ export default class Start extends React.Component {
 						Tobias Weinmann
 					</p>
 				</section>
+				<div id="linkToImpressum" onClick={this.handleOpen}>Imprint</div>
 			</div>
 		)
 	}
