@@ -7,32 +7,44 @@ import classNames from 'classnames';
 
 export default class Start extends React.Component {
 
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = ({ isImprintVisible: false });
-	// 	this.handleClick = this.handleClick.bind(this);
-	// }
-	//
-	// handleClick() {
-	//
-	// 	var windowHeight = window.innerHeight;
-	//
-	// 	this.setState({ isImprintVisible: true });
-	//
-	// 	scrollTo(0, windowHeight, {
-	// 		ease: 'inOutExpo',
-	// 		duration: 800
-	// 	});
-	// }
+	constructor(props) {
+		super(props);
+		this.state = ({ isImprintVisible: false });
+		this.handleClose = this.handleClose.bind(this);
+		this.handleOpen = this.handleOpen.bind(this);
+	}
+
+	handleOpen() {
+		this.setState({ isImprintVisible: true });
+	}
+
+	handleClose() {
+		this.setState({ isImprintVisible: false });
+	}
 
 	render() {
 
-		// const cx = classNames({ isVisible: this.state.isImprintVisible });
+		const cx = classNames({ isImprintVisible: this.state.isImprintVisible });
 
 		return (
-			<div>
+			<div id="page" className={cx}>
 				<section id="start">
 					<div id="logo"></div>
+					<div id="linkToImpressum" onClick={this.handleOpen}>Imprint</div>
+				</section>
+				<section id="impressum">
+					<div id="closeImpressum" onClick={this.handleClose}></div>
+					<h2>Responsible for this website:</h2>
+					<p>
+						tradeapp UG iGr<br/>
+						Gerichtstr. 18<br/>
+						13347 Berlin
+					</p>
+					<p className="light">
+						Geschäftsführer: <br/>
+						Julian Bauer,<br/>
+						Tobias Weinmann
+					</p>
 				</section>
 			</div>
 		)

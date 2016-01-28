@@ -1,12 +1,19 @@
-
-#start
+#page
 	position fixed
 	top 0
 	left 0
 	right 0
 	bottom 0
+	display flex
+	align-items stretch
+
+#start
+	position relative
 	background #00a9e0
 	overflow hidden
+	width 100%
+	flex-shrink 0
+	transition transform .3s .1s ease
 
 #logo
 	position absolute
@@ -20,3 +27,81 @@
 
 	background url('../../assets/images/logo.svg') no-repeat center
 	background-size contain
+
+#linkToImpressum
+	position absolute
+	bottom: 20px
+	right 20px
+	cursor pointer
+	font-size 13px
+	color #fff
+	text-transform uppercase
+	transition opacity .1s ease
+
+	&:hover
+		opacity 0.6
+
+impressumWidth = 230px
+
+#impressum
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	padding: 30px;
+	background #fff
+	color #262626
+	width impressumWidth
+	box-sizing border-box
+	transform translate3D(impressumWidth,0,0)
+	transition transform .2s ease-in-out
+
+	display flex
+	flex-direction column
+	justify-content center
+
+	h2
+		font-size 20px
+		margin-bottom 20px
+
+	p
+		margin-bottom 10px
+		font-size 13px
+
+#closeImpressum
+	position absolute
+	right 20px
+	bottom 20px
+	width 30px
+	height 30px
+	cursor pointer
+	transition transform .2s ease-in-out
+
+	&:before, &:after
+		content ""
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+		width 4px
+		height 20px
+		background #999
+		transition background .1s linear
+
+	&:before
+		transform translate(-50%, -50%) rotate(-45deg)
+
+	&:after
+		transform translate(-50%, -50%) rotate(45deg)
+
+	&:hover {
+		transform rotate(-180deg);
+	}
+
+#page.isImprintVisible
+
+	#start
+		transform translate3D(-(impressumWidth/2),0,0)
+
+	#impressum
+		transform translate3D(0,0,0)
