@@ -51,9 +51,10 @@ html, body
 	&:hover
 		opacity 0.55
 
-impressumWidth = 230px
+impressumWidth = 250px
 
 #impressum
+
 	position absolute
 	top 0
 	right 0
@@ -71,12 +72,33 @@ impressumWidth = 230px
 	justify-content center
 
 	h2
-		font-size 20px
+		font-size 24px
 		margin-bottom 20px
 
 	p
 		margin-bottom 10px
+		font-size 16px
+
+	a
+		color inherit
+		transition opacity .1s ease
+
+		&:hover
+			opacity 0.6
+
+#responsible
+
+	color #999
+
+	margin-top 20px
+
+	h2
+		font-size: 16px
+		margin-bottom 10px
+
+	p
 		font-size 13px
+
 
 #closeImpressum
 	position absolute
