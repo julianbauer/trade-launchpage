@@ -47,6 +47,7 @@ export default class Html extends React.Component {
 						<p className="light">
 							Geschäftsführer: <br/>
 							Julian Bauer,<br/>
+						Malte Delbrück,<br/>
 							Tobias Weinmann
 						</p>
 					</div>
