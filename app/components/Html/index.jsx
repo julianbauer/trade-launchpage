@@ -45,7 +45,7 @@ export default class Html extends React.Component {
 							13347 Berlin
 						</p>
 						<p className="light">
-							Managing Director: <br/>
+							Managing Directors: <br/>
 							Julian Bauer,<br/>
 							Malte Delbrück,<br/>
 							Tobias Weinmann
