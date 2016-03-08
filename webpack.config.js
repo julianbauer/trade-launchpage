@@ -1,7 +1,7 @@
 var path = require('path');
-// var fs = require('fs-extra');
 var node_modules_dir = path.resolve(__dirname, 'node_modules');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
     entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js')],
@@ -19,7 +19,7 @@ var config = {
             loader: 'babel'
 				}, {
 						test: /\.styl$/,
-						loader: "style!css!autoprefixer!stylus"
+						loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!stylus-loader?includePaths[]=" + path.resolve(__dirname, "./app/assets/styles"))
 				}, {
 						test: /.*\.(gif|png|jpe?g|svg)$/i,
 						loaders: [
@@ -36,7 +36,11 @@ var config = {
 		plugins: [
       new HtmlWebpackPlugin({
         title: 'Trade App'
+      }),
+      new ExtractTextPlugin('style.css', {
+          allChunks: true
       })
+
     ]
 };
 
